@@ -1,0 +1,99 @@
+<!-- fixed top navbar -->
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+
+      <button type="button" class="btn btn-default btn-back navbar-left pull-left hidden" onclick="history.back()">
+        <i class="fa fa-lg fa-chevron-left"></i><span>Back</span>
+      </button>
+      <!-- menu button to show/ hide the off canvas slider -->
+      <button type="button" class="btn btn-default btn-menu navbar-left pull-left offCanvasToggle" data-toggle="offcanvas" style="opacity: 1;">
+        <i class="fa fa-lg fa-bars"></i><span>Menu</span>
+      </button>  
+
+      <a class="navbar-brand no-break-out" title="Docker Commander" href="/">DC</a>  
+      
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active">
+            <a href="/dashboard" data-pjax="#main" data-title="Dashboard" <i="" class="fa fa-dashboard">
+              Dashboard
+            </a>          
+          </li>
+          <li>
+            <a href="/nodes" data-pjax="#main" data-title="Nodes" <i="" class="fa fa-building-o">
+              Nodes
+            </a>          
+          </li>
+          <li>
+            <a href="/services" data-pjax="#main" data-title="Contacts" <i="" class="fa fa-database">
+              Services
+            </a>          
+          </li>
+          <li>
+            <a href="/images" data-pjax="#main" data-title="Images" <i="" class="fa fa-picture-o">
+              Images
+            </a>          
+          </li>
+          <li>
+            <a href="/settings" data-pjax="#main" data-title="Settings" <i="" class="fa fa-gears">
+              Settings
+            </a>          
+          </li>
+        </ul>
+      </div>          
+    </div>
+  </div>   
+
+  <!-- slide in menu (mobile only) -->
+  {% comment %}
+  <nav id="offCanvasMenu" class="navmenu offcanvas offcanvas-left">
+    <ul class="nav">
+      <li class="active">
+        <a href="/dashboard" data-pjax="#main" data-title="Customers">
+          <i class="fa fa-lg fa-dashboard"></i>
+          Dashboard
+        </a>          
+      </li>
+      <li>
+        <a href="/companies" data-pjax="#main" data-title="Companies">
+          <i class="fa fa-lg fa-building-o"></i>
+          Companies
+        </a>          
+      </li>
+      <li>
+        <a href="/contacts" data-pjax="#main" data-title="Contacts">
+          <i class="fa fa-lg fa-users"></i>
+          Contacts
+        </a>          
+      </li>
+      <li>
+        <a href="/notes" data-pjax="#main" data-title="Notes">
+          <i class="fa fa-lg fa-clipboard"></i>
+          Notes
+        </a>          
+      </li>
+      <li>
+        <a href="/charts" data-pjax="#main" data-title="Charts">
+          <i class="fa fa-lg fa-bar-chart-o"></i>
+          Charts
+        </a>          
+      </li>
+      <li>
+        <a href="/settings" data-pjax="#main" data-title="Settings">
+          <i class="fa fa-lg fa-gears"></i>
+          Settings
+        </a>          
+      </li>
+    </ul>
+
+    <div style="margin-top:20px; padding-left: 20px; font-size: 12px; color: #777">v1.1.2</div>
+  </nav>
+  {% endcomment %}

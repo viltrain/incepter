@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <title>{% block title %}Docker Commander{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootcards/1.1.2/css/bootcards-desktop.min.css">
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/bootcards/1.1.2/js/bootcards.min.js"></script>
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+	
+	<link href="//demo.bootcards.org/bootcards-demo-app/css/bootcards-demo-app.css" rel="stylesheet">
+	<link href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css" rel="stylesheet">
+
+
+    <!--
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    <script type="text/javascript" src="//code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootcards/1.1.2/css/bootcards-desktop.min.css">
+
+    <style>
+        body {padding-top: 0px !important}
+    </style>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootcards/1.1.2/js/bootcards.min.js"></script>
+
+    <link rel="stylesheet" href="/static/dc/css/style.css">
+
+    <script type="text/javascript" src="./bower_components/term.js/src/term.js"></script>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    -->
+</head>
+<body>
+<div class="main-container">
+    <div id="container" class="scrollable">
+    	
+    	<div class="navbar navbar-default navbar-fixed-top">
+		 <div class="navbar-header"><a class="navbar-brand" href="#">Brand</a>
+		      <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </a>
+		    </div>
+		    <div id="navbarCollapse" class="navbar-collapse collapse">
+		      <ul class="nav navbar-nav">
+		        <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+		        <li><a href="#"><span class="glyphicon glyphicon-equalizer"></span>Link</a></li>
+		        <li><a href="#"><span class="glyphicon glyphicon-Images"></span>More</a></li>
+		        <li><a href="#"><span class="glyphicon glyphicon-wrench"></span>Settings</a></li>
+		      </ul>
+		    </div>
+		</div>
+
+        {% block content %}{% endblock %}
+    </div>
+</div>
+
+<footer class="footer" style="text-align:center;">
+    <div class="container">
+        Docker Commander
+    </div>
+</footer>
+
+<script>
+	bootcards.init( {
+	  offCanvasBackdrop : true,
+	  offCanvasHideOnMainClick : true,
+	  enableTabletPortraitMode : true,
+	  disableRubberBanding : true,
+	  disableBreakoutSelector : 'a.no-break-out'
+	});
+</script>
+</body>
+</html>

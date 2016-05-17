@@ -1,0 +1,76 @@
+{% extends "dc/base.html" %}
+
+{% block content %}
+<div class="col-sm-5 bootcards-list" id="list" data-title="Nodes">
+	<div class="panel panel-default">				
+		<div class="panel-body">
+			<div class="search-form">
+				<div class="row">
+				    <div class="col-xs-9">
+				      <div class="form-group">
+					      <input type="text" class="form-control" placeholder="Search nodes...">
+					      <i class="fa fa-search"></i>
+				      </div>
+				    </div>
+				    <div class="col-xs-3">
+						<a class="btn btn-primary btn-block" href="/nodes/add" data-toggle="modal" data-target="#editModal">
+							<i class="fa fa-plus"></i> 
+							<span>Add</span>
+						</a>
+				    </div>
+				</div>						    
+			</div>					
+		</div>
+		<div class="list-group">
+			{% for node in nodes %}
+				<a class="list-group-item pjax active" href="/nodes/{{ node.uuid }}/">
+					<i class="img-rounded pull-left fa fa-3x fa-building-o"></i> 
+					<h4 class="list-group-item-heading">{{ node.uuid }}</h4>
+					<p class="list-group-item-text">{{ node.uuid }}</p>
+				</a>
+			{% endfor %}				
+		</div>
+		<div class="panel-footer">
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+
+{% block modals %}
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModal" aria-hidden="true" style="display: none;">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+					<div class="btn-group pull-left">
+						<button class="btn btn-danger" data-dismiss="modal">
+							Cancel
+						</button>
+					</div>
+				
+					<div class="btn-group pull-right">
+						<button class="btn btn-success" data-dismiss="modal">
+							Save
+						</button>
+					</div>
+				<h4 class="modal-title">
+						Add Node
+				</h4>		
+			</div>
+			<div class="modal-body">
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Email</label>
+						<div class="col-xs-8">
+							<input type="email" name="email" class="form-control" placeholder="Email" value="">
+						</div>
+					</div>
+			</div>
+			<div class="modal-footer">
+				<small class="pull-left">Built with Bootcards - Form Card</small>
+				<a class="btn btn-link btn-xs pull-right" href="/snippets/form-card" data-toggle="modal" data-target="#docsModal">
+					View Source</a>
+			</div>	
+		</div>
+	</div>
+</div>
+{% endblock %}

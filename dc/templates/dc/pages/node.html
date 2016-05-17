@@ -1,0 +1,108 @@
+{% extends "dc/base.html" %}
+
+{% block title %}{{ node.uuid }}{% endblock %}
+
+{% block content %}
+
+<div class="row">
+<div class="col-sm-12">
+	<div class="panel panel-default bootcards-summary">
+	  <div class="panel-heading">
+	  	<ol class="breadcrumb" style="margin-bottom: 0;">
+			  <li><a href="/">Home</a></li>
+			  <li><a href="/nodes/">Nodes</a></li>
+			  <li class="active"><i class="fa fa-2x fa-building-o"></i> {{ node.uuid }}</li>
+		</ol>
+	  </div>
+	  <div class="panel-body">
+	    <div class="row">
+	      <div class="col-xs-2 col-sm-3">
+	        <a class="bootcards-summary-item" href="#" style="height: auto; padding: 15px 10px;">
+	          <h4>CPUs <span class="label label-info">{{ info.NCPU }}</span></h4>
+	        </a>
+	      </div>
+	      <div class="col-xs-2 col-sm-3">
+	        <a class="bootcards-summary-item" href="#" style="height: auto; padding: 15px 10px;">
+	          <h4>Running <span class="label label-info">{{ info.ContainersRunning }}</span></h4>
+	        </a>
+	      </div>
+	      <div class="col-xs-2 col-sm-3">
+	        <a class="bootcards-summary-item" href="#" style="height: auto; padding: 15px 10px;">
+	          <h4>Stopped <span class="label label-info">{{ info.ContainersStopped }}</span></h4>
+	        </a>
+	      </div>
+	      <div class="col-xs-2 col-sm-3">
+	        <a class="bootcards-summary-item" href="#" style="height: auto; padding: 15px 10px;">
+	          <h4>Pauzed <span class="label label-info">{{ info.ContainersPaused }}</span></h4>
+	        </a>
+	      </div>
+	    </div>
+	  </div>
+  </div>
+</div>
+
+</div>
+<div class="row">
+	<div class="col-sm-5 bootcards-list" id="list" data-title="Nodes">
+		<div class="panel panel-default">				
+			<div class="panel-body">
+				<div class="search-form">
+					<div class="row">
+					    <div class="col-xs-9">
+					      <div class="form-group">
+						      <input type="text" class="form-control" placeholder="Search containers...">
+						      <i class="fa fa-search"></i>
+					      </div>
+					    </div>
+					    <div class="col-xs-3">
+							<a class="btn btn-primary btn-block" href="/node/{{ node.uuid }}/containers/add" data-toggle="modal" data-target="#editModal">
+								<i class="fa fa-plus"></i> 
+								<span>Add</span>
+							</a>
+					    </div>
+					</div>						    
+				</div>					
+			</div>
+			<div class="list-group">
+				{% for container in containers %}
+					<a class="list-group-item pjax active" href="/nodes/{{ node.uuid }}/">
+						<i class="img-rounded pull-left fa fa-3x fa-database"></i> 
+						<h4 class="list-group-item-heading">{{ container.Names }}</h4>
+						<p class="list-group-item-text">{{ container.Status }}</p>
+					</a>
+				{% endfor %}				
+			</div>
+			<div class="panel-footer">
+			</div>
+		</div>
+	</div>
+	
+	<div class="col-md-7 col-sm-7 bootcards-cards">
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Info</h3>
+		  </div>
+		  <div class="table-responsive">
+		    <table class="table table-hover">
+		      <thead>
+		        <tr class="active"><th>Name</th><th>Value</th></tr>
+		      </thead>
+		      <tbody>
+		      	{% for key, value in info.items %}
+		        <tr><td>{{key}}</td><td>{{value}}</td></tr>
+		        {% endfor %}
+		      </tbody>
+		    </table>
+		  </div>
+		  <div class="panel-footer">
+		  </div>
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}
+
+
+
+
